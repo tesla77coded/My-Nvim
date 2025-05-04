@@ -8,4 +8,16 @@ vim.opt.listchars = {
   extends = "»", -- Overflow indicator
   precedes = "«", -- Overflow indicator
 }
+
+vim.api.nvim_create_autocmd({ "InsertEnter" }, {
+  callback = function()
+    vim.opt.list = true
+  end,
+})
+
+vim.api.nvim_create_autocmd({ "InsertLeave" }, {
+  callback = function()
+    vim.opt.list = false
+  end,
+})
 -- Add any additional options here

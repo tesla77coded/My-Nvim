@@ -8,7 +8,7 @@ vim.o.laststatus = 0
 
 -- setup must be called before loading
 require("catppuccin").setup({
-  flavour = "frappe", -- latte, frappe, macchiato, mocha
+  flavour = "mocha", -- latte, frappe, macchiato, mocha
   background = { -- :h background
     light = "latte",
     dark = "mocha",
@@ -60,15 +60,20 @@ require("catppuccin").setup({
 
 --neovide config --
 
+vim.keymap.set("i", "<C-H>", "<C-w>", { noremap = true })
 if vim.g.neovide then
-  vim.o.guifont = "JetBrains Mono Medium:h14"
-  vim.g.neovide_transparency = 1.0
+  vim.o.guifont = "JetBrains Mono Medium:h20"
   vim.g.neovide_refresh_rate = 60
-  vim.opt.linespace = 4
+  vim.g.neovide_refresh_rate_idle = 5
+  vim.opt.linespace = 7
   vim.g.neovide_antialiasing = true
   vim.g.neovide_floating_blur = true
   vim.opt.cursorline = true
-  vim.g.neovide_font_smoothing = true
+  vim.g.neovide_opacity = 0.8
+  vim.g.neovide_normal_opacity = 0.8
+  vim.g.neovide_cursor_antialiasing = true
+  vim.g.neovide_cursor_trail_size = 0.2
+  vim.g.neovide_cursor_animate_command_line = true
 end
 
 -- Map Ctrl + Backspace to delete a whole word
